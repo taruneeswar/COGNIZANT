@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQuery Community Portal</title>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<style>
+
+body{
+    font-family:Arial,sans-serif;
+    margin:20px;
+}
+
+.box{
+    width:200px;
+    height:100px;
+    background:skyblue;
+    margin:10px;
+    padding:10px;
+}
+
+#colorBox{
+    width:200px;
+    height:100px;
+    background:white;
+    border:2px solid black;
+    margin-top:10px;
+}
+
+.eventArea{
+    border:1px solid gray;
+    padding:15px;
+    margin-top:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Community Event Portal</h1>
+
+<p>Hello World!</p>
+
+<p id="hideMe">
+This paragraph can be hidden.
+</p>
+
+<button id="changeBtn">
+Change Heading
+</button>
+
+<hr>
+
+<h2>jQuery Methods</h2>
+
+<button id="hideBtn">Hide</button>
+<button id="showBtn">Show</button>
+<button id="fadeOutBtn">Fade Out</button>
+<button id="fadeInBtn">Fade In</button>
+<button id="toggleBtn">Toggle</button>
+
+<div class="box">Event Box 1</div>
+<div class="box">Event Box 2</div>
+<div class="box">Event Box 3</div>
+
+<hr>
+
+<h2>DOM Manipulation</h2>
+
+<input type="text"
+       id="itemInput"
+       placeholder="Enter Event">
+
+<button id="addBtn">
+Add Event
+</button>
+
+<button id="removeBtn">
+Remove All
+</button>
+
+<ul id="eventList"></ul>
+
+<hr>
+
+<h2>Color Event Demo</h2>
+
+<button id="colorBtn">
+Change Color
+</button>
+
+<div id="colorBox"></div>
+
+<hr>
+
+<h2>Mouse & Keyboard Events</h2>
+
+<div id="eventBox"
+     class="eventArea">
+
+Hover or Click Here
+
+</div>
+
+<br>
+
+<input type="text"
+       id="keyInput"
+       placeholder="Type Something">
+
+<p id="output"></p>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace CommunityPortal
+{
+    class Program
+    {
+        static async Task Main(string[] args)
+        {
+            Console.WriteLine("=== Cognizant DN 5.0 C# Demo ===");
+
+            // Value Type
+            int number = 10;
+
+            // Reference Type
+            Person person = new Person("Sharmila", 21);
+
+            Console.WriteLine($"Number = {number}");
+            person.Display();
+
+            // OOP
+            Shape shape1 = new Circle();
+            Shape shape2 = new Rectangle();
+
+            shape1.Draw();
+            shape2.Draw();
+
+            // Collections
+            List<string> events = new List<string>()
+            {
+                "Tech Meetup",
+                "Music Fest",
+                "Workshop"
+            };
+
+            Console.WriteLine("\nEvents:");
+
+            foreach (string e in events)
+            {
+                Console.WriteLine(e);
+            }
+
+            // Dictionary
+            Dictionary<int, string> users =
+                new Dictionary<int, string>();
+
+            users.Add(1, "Alice");
+            users.Add(2, "Bob");
+
+            Console.WriteLine("\nUsers:");
+
+            foreach (var user in users)
+            {
+                Console.WriteLine(
+                    $"{user.Key} - {user.Value}"
+                );
+            }
+
+            // LINQ
+            var result =
+                events.Where(x => x.Contains("Tech"));
+
+            Console.WriteLine("\nLINQ Result:");
+
+            foreach (var item in result)
+            {
+                Console.WriteLine(item);
+            }
+
+            // Exception Handling
+            try
+            {
+                int a = 10;
+                int b = 0;
+
+                int c = a / b;
+
+                Console.WriteLine(c);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(
+                    "Exception: " + ex.Message
+                );
+            }
+
+            // Async Await
+            await UploadFileAsync();
+
+            Console.WriteLine(
+                "\nProgram Completed Successfully"
+            );
+        }
+
+        static async Task UploadFileAsync()
+        {
+            Console.WriteLine(
+                "\nUploading File..."
+            );
+
+            await Task.Delay(3000);
+
+            Console.WriteLine(
+                "File Uploaded Successfully"
+            );
+        }
+    }
+
+    class Person
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+
+        public Person(string name, int age)
+        {
+            Name = name;
+            Age = age;
+        }
+
+        public void Display()
+        {
+            Console.WriteLine(
+                $"Name: {Name}, Age: {Age}"
+            );
+        }
+    }
+
+    class Shape
+    {
+        public virtual void Draw()
+        {
+            Console.WriteLine(
+                "Drawing Shape"
+            );
+        }
+    }
+
+    class Circle : Shape
+    {
+        public override void Draw()
+        {
+            Console.WriteLine(
+                "Drawing Circle"
+            );
+        }
+    }
+
+    class Rectangle : Shape
+    {
+        public override void Draw()
+        {
+            Console.WriteLine(
+                "Drawing Rectangle"
+            );
+        }
+    }
+}
