@@ -2,7 +2,7 @@
 
 namespace CognizantDNS.Design_Patterns_and_Principles.Singleton_Pattern
 {
-    internal class Logger
+    internal class Logger 
     {
         private static Logger? instance;
 
